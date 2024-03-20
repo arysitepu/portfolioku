@@ -1,0 +1,1 @@
+Run tailwind cssku : npx tailwindcss -i ./src/input.css -o ./dst/output.css --watch
