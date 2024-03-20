@@ -1138,6 +1138,77 @@ body{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+/* CSS untuk elemen muncul dari kiri */
+
+[data-aos="fade-left"] {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* CSS untuk elemen muncul dari kanan */
+
+[data-aos="fade-right"] {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+  transition-property: opacity, transform;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add animation to "page content" */
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@keyframes animatebottom {
+  from{
+    bottom:-100px;
+    opacity:0
+  }
+
+  to{
+    bottom:0;
+    opacity:1
+  }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
 .hover\:border-primary:hover {
   --tw-border-opacity: 1;
   border-color: rgb(20 184 166 / var(--tw-border-opacity));
